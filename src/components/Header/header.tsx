@@ -22,8 +22,8 @@ export const Header = () =>{
 
       <Navbar/>
 
-        <menu className="mobileMenu  justify-end md:[display:none]">
-        <ul className={`searchList ${isActive ? " transition w-[50%] p-6 block absolute top-[85px] left-2/3 transform bg-black text-white rounded-bl-[16px]" 
+        <menu className=" transition-all duration-100 mobileMenu  justify-end md:[display:none]">
+        <ul className={`searchList ${isActive ? " transition w-[33.2%] p-6 block absolute top-[85px] left-2/3 transform bg-black text-white rounded-bl-[16px]" 
           : "hidden"}`}>
           <li className="target p-2 pt-4 border-b-[1px] border-b-white mx-auto">
             <Link to="/">Home</Link>
