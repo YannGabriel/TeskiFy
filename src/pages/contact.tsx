@@ -2,7 +2,7 @@
 
  export const Contact = () =>{
   return(
-    <p>
+    <p className="h-[100vh]">
     Contact
   </p>
   )

@@ -3,7 +3,7 @@
 
 export const Projects = () =>{
   return(
-    <p>
+    <p className="h-[100vh]">
     Projetos
   </p>
   )

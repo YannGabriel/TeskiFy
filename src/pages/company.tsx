@@ -2,6 +2,6 @@
 
 export const Company = () =>{
   return(
-    <p>Company</p>
+    <p className="h-[100vh]">Company</p>
   )
 }

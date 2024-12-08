@@ -2,7 +2,7 @@
 
 const Home = () =>{
   return(
-    <p>
+    <p className="h-[100vh]">
       Home
     </p>
   )
