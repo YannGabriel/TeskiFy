@@ -13,14 +13,14 @@ export const Footer = () =>{
         Projeto feito por cursos do YouTube para treinamento de técnicas em react, typescript e bibliotecas dos mesmos!
       </p>
 
-      <div className="socialMedias inline-flex w-[20%] justify-between pl-8 ml-32">
+      <div className="socialMedias inline-flex w-[20%] justify-between pl-8 ml-32 items-center m-auto">
         <a href="https://linkedin.com/in/yann-gabriel-dev" target="blank" className="mediaTarget" id="Linkedin">
           <SlSocialLinkedin/>
           </a>
           <a href="https://github.com/YannGabriel" target="blank" className="mediaTarget" id="Github">
           <SlSocialGithub/>
           </a>
-          <a href="" className="mediaTarget" id="Whatsapp">
+          <a href="/" className="mediaTarget" id="Whatsapp">
           <FaWhatsapp/>
           </a>
       </div>
