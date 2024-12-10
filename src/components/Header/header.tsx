@@ -13,7 +13,7 @@ export const Header = () =>{
   const [isActive, setActive] = useState(false)
 
   return(
-    <header className="container-top bg-black rounded-br-[16px] rounded-bl-[16px] flex w-[100%] content-center align-middle mr-auto
+    <header className="container-top bg-lightBlue rounded-br-[16px] rounded-bl-[16px] flex w-[100%] content-center align-middle mr-auto
      text-white h-[100px] items-center p-4 justify-between
     ">
       <h1 className="websiteName">
@@ -23,7 +23,7 @@ export const Header = () =>{
       <Navbar/>
 
         <menu className=" transition-all duration-100 mobileMenu  justify-end md:[display:none]">
-        <ul className={`searchList ${isActive ? " transition w-[33.2%] p-6 block absolute top-[85px] left-2/3 transform bg-black text-white rounded-bl-[16px]" 
+        <ul className={`searchList ${isActive ? " transition w-[33.2%] p-6 block absolute top-[85px] left-2/3 transform bg-lightBlue text-white rounded-bl-[16px]" 
           : "hidden"}`}>
           <li className="target p-2 pt-4 border-b-[1px] border-b-white mx-auto">
             <Link to="/">Home</Link>
@@ -44,7 +44,7 @@ export const Header = () =>{
       className={clsx(
          "p-2 rounded-lg transition",
          "md:hidden",
-      isActive ? " bg-gray-500 text-black" : "bg-white text-black"
+      isActive ? " bg-darkBlue text-white" : "bg-white text-pastelBlue"
       )}
       >
          {isActive ? <IoMdClose  /> : <CiMenuBurger />}
