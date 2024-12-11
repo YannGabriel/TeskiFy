@@ -3,9 +3,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lightBlue: "#00b3ff",
-        darkBlue: "#1900ff",
-        pastelBlue: "#0070ce",
+        lightBlue: "#90e0ef",
+        darkBlue: "#00b4d8",
+        pastelBlue: "#0077b6",
       },
     },
   },
