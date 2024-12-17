@@ -2,6 +2,7 @@
 
 //imports
 import HomeImage from '../images/home-image.svg';
+import { LinkButton } from '../components/buttons/newProjectButton';
 
 
 const Home = () =>{
@@ -20,11 +21,7 @@ const Home = () =>{
          lg:text-2xl md:text-start md:pl-[5%]">
           Quer organizar seus projetos?
         </p>
-        <a href="/Projects" className="projectTarget block text-darkBlue font-semibold text-center md:text-xl 
-         lg:text-2xl lg:text-start lg:pl-[5%] lg:pt-[1%]"
-        >
-        Crie seu Projeto!
-        </a>
+        <LinkButton to='/newproject' text='Criar Projeto'/>
     </div>
   )
 }
