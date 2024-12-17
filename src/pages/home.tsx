@@ -18,10 +18,10 @@ const Home = () =>{
         />
 
         <p className="makeProject md:text-lg text-center pt-3 text-pastelBlue
-         lg:text-2xl md:text-start md:pl-[5%]">
+         lg:text-2xl lg:text-start lg:pl-[5%]">
           Quer organizar seus projetos?
         </p>
-        <LinkButton to='/newproject' text='Criar Projeto'/>
+        <LinkButton to="/newproject" text='Criar Projeto'/>
     </div>
   )
 }
