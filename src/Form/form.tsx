@@ -46,7 +46,7 @@ export const ProjectForm = () => {
   };
 
   return (
-    <form className="mt-[5%]">
+    <form className="mt-[5%] lg:w-[60%] lg:m-auto lg:mt-[5%] p-[3%]">
       <Input type="text" placeholder="Insira o nome do projeto" />
 
       <textarea
