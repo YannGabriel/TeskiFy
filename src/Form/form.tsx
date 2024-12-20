@@ -1,5 +1,5 @@
 // imports
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TiDelete } from "react-icons/ti";
 import { Input } from "./input";
 import { Select } from "./select";
@@ -26,7 +26,19 @@ export const ProjectForm = () => {
   };
 
   const [categories, setCategories] = useState([])
-  
+
+  useEffect(() =>{
+    fetch("http://localhost:5000/categories", { //puxar link(localhost)
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((info) => info.json())
+    .then((data) =>{
+      setCategories(data)
+    })
+  }, [])
+
   return (
     <form className="mt-[5%] lg:w-[60%] lg:m-auto lg:mt-[5%] p-[3%]">
       <Input type="text" placeholder="Insira o nome do projeto" />
@@ -50,6 +62,7 @@ export const ProjectForm = () => {
 
       <Select
       name="SelectContainer"
+      options={categories}
       />
 
       <div className="MetasAdd flex w-[70%] m-auto mt-5">
@@ -84,4 +97,8 @@ export const ProjectForm = () => {
       </button>
     </form>
   );
-};
+
+  }
+
+
+
