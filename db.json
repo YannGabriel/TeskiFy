@@ -1,0 +1,21 @@
+{
+  "projects": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Web Development"
+    },
+    {
+      "id": 2,
+      "name": "Data Base Development"
+    },
+    {
+      "id": 3,
+      "name": "Ui/Ux Development"
+    },
+    {
+      "id": 1,
+      "name": "Project Struture"
+    }
+  ]
+}

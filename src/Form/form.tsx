@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { TiDelete } from "react-icons/ti";
 import { Input } from "./input";
+import { Select } from "./select";
 
 
 export const ProjectForm = () => {
@@ -24,6 +25,8 @@ export const ProjectForm = () => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== idToRemove)); // Filtra a tarefa com o idToRemove
   };
 
+  const [categories, setCategories] = useState([])
+  
   return (
     <form className="mt-[5%] lg:w-[60%] lg:m-auto lg:mt-[5%] p-[3%]">
       <Input type="text" placeholder="Insira o nome do projeto" />
@@ -44,6 +47,10 @@ export const ProjectForm = () => {
         Data de Término (prevista)
       </span>
       <Input type="date" placeholder="Data de Término (prevista)" id="DateFinish" />
+
+      <Select
+      name="SelectContainer"
+      />
 
       <div className="MetasAdd flex w-[70%] m-auto mt-5">
         <Input
