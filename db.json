@@ -14,8 +14,12 @@
       "name": "Ui/Ux Development"
     },
     {
-      "id": 1,
+      "id": 4,
       "name": "Project Struture"
+    },
+    {
+      "id": 5,
+      "name": "Other"
     }
   ]
 }
