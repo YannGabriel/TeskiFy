@@ -1,8 +1,29 @@
 
+import { METHODS } from "http"
 import { ProjectForm } from "../Form/form"
-
+import {useNavigate} from "react-router-dom"
 
 export const NewProject = () =>{
+
+  const navigate = useNavigate()
+
+  function createPost(project: any){
+
+    fetch("http://localhost:5000/projects", {
+      method:"POST",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(project)
+    })
+    .then((project) => project.json())
+    .then((data) =>{
+      console.log(data)
+      //redirect
+      navigate('/projects', {state: {message: "Projeto criado com sucesso!"}})
+    })
+    .catch(err => console.log("Erro", err))
+  }
   return(
     <div className="NewProjectPage min-h-[80vh]">
         <h1 id="pageCalledTittle" className="text-2xl font-bold pt-10 pl-5">
@@ -13,7 +34,7 @@ export const NewProject = () =>{
           Crie seus projetos, se organize e melhore sua produtividade!
         </p>
 
-        <ProjectForm/>
+        <ProjectForm handleSubmit={createPost}/>
     </div>
   )
 }

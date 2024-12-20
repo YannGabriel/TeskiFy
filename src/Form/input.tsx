@@ -3,6 +3,7 @@
 // Input configs
 interface inputProps {
   type: string;
+  name: string
   placeholder: string;
   id?: string;
   value?: string;
@@ -10,10 +11,11 @@ interface inputProps {
 }
 
 // Input JSX
-export const Input = ({ type, placeholder, id, value, onChange }: inputProps) => {
+export const Input = ({ type, placeholder, id, value, onChange, name }: inputProps) => {
   return (
     <input
       type={type}
+      name = {name}
       placeholder={placeholder}
       id={id}
       value={value}
