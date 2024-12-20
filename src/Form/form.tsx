@@ -1,32 +1,11 @@
 // imports
 import { useState } from "react";
 import { TiDelete } from "react-icons/ti";
+import { Input } from "./input";
 
-// Input configs
-interface inputProps {
-  type: string;
-  placeholder: string;
-  id?: string;
-  value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; // Adicionando onChange
-}
-
-// Input JSX
-export const Input = ({ type, placeholder, id, value, onChange }: inputProps) => {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      id={id}
-      value={value}
-      onChange={onChange} // evento onchange
-      className="border-0 border-b-[1px] border-lightBlue outline-none focus:border-darkBlue :border-b-[2px] block m-auto w-[70%] mt-2"
-    />
-  );
-};
 
 export const ProjectForm = () => {
-  const [tasks, setTasks] = useState<{ id: string; name: string }[]>([]); // Agora tasks é um array de objetos com id e nome
+  const [tasks, setTasks] = useState<{ id: string; name: string }[]>([]); // Agora tasks é um array
   const [currentTask, setCurrentTask] = useState("");
 
   // Função para adicionar tarefas
