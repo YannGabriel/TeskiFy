@@ -20,7 +20,7 @@ interface Project {
   id: string;
   name: string;
   category: Category;
-  handleRemove: () => void;
+  handleRemove: (id:string) => void;
   tasks: Tasks[];
   startDate: string;
   lastDate: string;
@@ -53,6 +53,21 @@ export const Projects = () => {
     message = location.state.message;
   }
 
+  function removeProject(id:string){
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+
+    ).then((resp) => resp.json())
+    .then((data =>{
+      setProjects(projects.filter((project) => project.id !== id))
+    }))
+    .catch(err => console.log(err))
+  }
+
   return (
     <div className="min-h-[100vh] pb-[20%]">
       <h1 className="ml-5 mt-[2.5%] font-bold text-2xl">Meus projetos</h1>
@@ -66,7 +81,7 @@ export const Projects = () => {
               key={project.id}
               name={project.name}
               id={project.id}
-              handleRemove={project.handleRemove} // Passando a função handleRemove de cada projeto
+              handleRemove={removeProject} // Passando a função handleRemove de cada projeto
               category={project.category.name}
               startDate={project.startDate}
               lastDate={project.lastDate}

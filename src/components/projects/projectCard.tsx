@@ -1,5 +1,5 @@
 
-//import{BsPencil, BsFillTrashFill} from "react-icons/bs"
+import{BsFillTrashFill} from "react-icons/bs"
 
 interface Tasks{
   name: string,
@@ -10,7 +10,7 @@ interface ProjectProps {
   id: string;
   name: string;
   category: string;
-  handleRemove: () => void;
+  handleRemove: (id:string) => void;
   startDate: string;
   lastDate: string;
   tasks: Tasks[];  // Alterado para um array de Tasks
@@ -22,6 +22,11 @@ interface ProjectProps {
 export const ProjectCard = ({id, name, description,
    category, handleRemove, tasks,
    startDate, lastDate}: ProjectProps) =>{
+
+    const remove = ((e: any) =>{
+      e.preventDefault()
+      handleRemove(id)
+    })
   return(
     <div className="projectCard p-5 border-blue-300 border rounded-xl mt-[2.5%] w-[85%] m-auto">
     <h1 className="ProjectTitle font-semibold text-darkBlue text-2xl pb-1">
@@ -56,6 +61,10 @@ export const ProjectCard = ({id, name, description,
           <p>Não há tarefas!</p>
         )}
       </div>
+
+      <button onClick={remove} className="removeProject w-[40%] mt-2 bg-gray-300 p-1 flex justify-center rounded-md text-black cursor-pointer">
+        <BsFillTrashFill/>
+      </button>
     </div>
   )
 }
