@@ -21,7 +21,7 @@ const Home = () =>{
          lg:text-2xl lg:text-start lg:pl-[5%]">
           Quer organizar seus projetos?
         </p>
-        <LinkButton to="/newproject" text='Criar Projeto'/>
+        <LinkButton to="/newproject" text='Criar Projeto agora mesmo!'/>
     </div>
   )
 }
