@@ -1,6 +1,5 @@
 
-import { METHODS } from "http"
-import { ProjectForm } from "../Form/form"
+import { ProjectForm } from "../components/Form/form"
 import {useNavigate} from "react-router-dom"
 
 export const NewProject = () =>{

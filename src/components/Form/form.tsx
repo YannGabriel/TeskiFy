@@ -70,7 +70,9 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
   useEffect(() => {
     fetch("http://localhost:5000/categories", {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json"
+       },
     })
       .then((info) => info.json())
       .then((data) => setCategories(data))
