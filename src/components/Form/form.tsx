@@ -68,7 +68,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories", {
+    fetch("http://localhost:5000/category", {
       method: "GET",
       headers: { 
         "Content-Type": "application/json"
