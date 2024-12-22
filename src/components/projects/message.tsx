@@ -30,7 +30,7 @@ export const Message = ({msg, type}: MessageProps) =>{
   return(
     <>
     {visible &&(
-          <p className="message bg-green-200 w-[80%] text-center p-2 rounded-md text-green-700 mt-[2.5%] ml-5">{msg}</p>
+          <p className="message m-auto bg-green-200 w-[80%] text-center p-2 rounded-md text-green-700 mt-[2.5%] ">{msg}</p>
     )}
     </>
 

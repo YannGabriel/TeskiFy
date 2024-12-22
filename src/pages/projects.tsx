@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../components/buttons/newProjectButton";
 import { ProjectCard } from "../components/projects/projectCard";
+import { Loader } from "../components/Layout/loader";
 
 interface Category {
   id: string;
@@ -27,7 +28,8 @@ interface Project {
 }
 
 export const Projects = () => {
-  const [projects, setProjects] = useState<Project[]>([]); // Tipando o estado com a interface Project
+  const [projects, setProjects] = useState<Project[]>([])// Tipando o estado com a interface Project
+  const [removeLoading, setRemoveLoading] = useState(false)//Remoção/criação do laoding
 
   useEffect(() => {
     fetch("http://localhost:5000/projects", {
@@ -40,6 +42,7 @@ export const Projects = () => {
       .then((data) => {
         setProjects(data);
         console.log(data);
+        setRemoveLoading(true);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -71,6 +74,7 @@ export const Projects = () => {
               tasks={project.tasks}
             />
           ))}
+          {!removeLoading && <Loader/>}
       </div>
     </div>
   );
