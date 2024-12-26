@@ -1,4 +1,3 @@
-// imports
 import { useEffect, useState } from "react";
 import { TiDelete } from "react-icons/ti";
 import { Input } from "./input";
@@ -9,30 +8,26 @@ interface ProjectsProps {
 }
 
 export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
-  // Estado do projeto
   const [project, setProject] = useState({
     name: "",
     description: "",
     startDate: "",
     lastDate: "",
     category: { id: "", name: "" },
-    tasks: [] as { id: string; name: string }[], // Inicia com um array vazio de tarefas
+    tasks: [] as { id: string; name: string }[],
   });
 
   const [currentTask, setCurrentTask] = useState("");
 
-  // Função para enviar o formulário
   const submit = (e: any) => {
     e.preventDefault();
-    handleSubmit(project); // Passa o projeto completo para o handler
+    handleSubmit(project);
   };
 
-  // Função para atualizar o estado do projeto com base nos inputs
   function handleChange(e: any) {
     setProject({ ...project, [e.target.name]: e.target.value });
   }
 
-  // Função para atualizar a categoria
   function handleCategory(e: any) {
     setProject({
       ...project,
@@ -43,28 +38,25 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
     });
   }
 
-  // Função para adicionar tarefas
   const addTask = (event: React.MouseEvent) => {
     event.preventDefault();
     if (currentTask.trim() !== "") {
       const newTask = { id: Date.now().toString(), name: currentTask };
       setProject((prevProject) => ({
         ...prevProject,
-        tasks: [...prevProject.tasks, newTask], // Adiciona a nova tarefa ao projeto
+        tasks: [...prevProject.tasks, newTask],
       }));
-      setCurrentTask(""); // Limpa o campo de input
+      setCurrentTask("");
     }
   };
 
-  // Função para remover tarefas
   const removeTask = (idToRemove: string) => {
     setProject((prevProject) => ({
       ...prevProject,
-      tasks: prevProject.tasks.filter((task) => task.id !== idToRemove), // Filtra a tarefa removida
+      tasks: prevProject.tasks.filter((task) => task.id !== idToRemove),
     }));
   };
 
-  // Carregar categorias da API
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -80,7 +72,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
   }, []);
 
   return (
-    <form onSubmit={submit} className="mt-[5%] lg:w-[60%] lg:m-auto lg:mt-[5%] p-[3%]">
+    <form onSubmit={submit}>
       <Input
         type="text"
         placeholder="Insira o nome do projeto"
@@ -94,9 +86,8 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
         id="ProjectInfos"
         placeholder="Descrição do projeto"
         onChange={handleChange}
-        className="w-[70%] border-[1px] border-lightBlue rounded-xl m-auto block p-2 mt-[2.5%] outline-none focus:border-darkBlue"
       ></textarea>
-      <span className="InputDetail w-[70%] block m-auto pt-2 text-sm text-darkBlue">Data de Inicio</span>
+      <span>Data de Inicio</span>
       <Input
         type="date"
         placeholder="Data Inicial do Projeto"
@@ -105,7 +96,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
         id="DateStart"
         onChange={handleChange}
       />
-      <span className="InputDetail w-[70%] block m-auto pt-5 text-sm text-darkBlue">Data de Término (prevista)</span>
+      <span>Data de Término (prevista)</span>
       <Input
         type="date"
         placeholder="Data Final do projeto"
@@ -121,37 +112,32 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
         onChange={handleCategory}
       />
 
-      <div className="MetasAdd flex w-[70%] m-auto mt-5">
+      <div>
         <Input
-        name="tasks"
+          name="tasks"
           type="text"
           placeholder="Insira as tarefas"
           id="WorksMetas"
           value={currentTask}
-          onChange={(e) => setCurrentTask(e.target.value)} // Atualiza o estado da tarefa
+          onChange={(e) => setCurrentTask(e.target.value)}
         />
-        <button onClick={addTask} className="bg-darkBlue text-white p-2 rounded-lg w-[20%]">
-          Add
-        </button>
+        <button onClick={addTask}>Add</button>
       </div>
 
-      <p className="flutuant-space p-5"></p>
+      <p></p>
 
-      <span className="Metas w-[50%]">
+      <span>
         {project.tasks.map((task) => (
-          <div key={task.id} className="TaskItem mb-3 m-auto w-[50%] flex bg-lightBlue justify-around rounded-lg text-white items-center p-2">
-            <p className="text-center flex font-bold w-[80%]">{task.name}</p>
-            <button onClick={() => removeTask(task.id)} className="text-2xl">
+          <div key={task.id}>
+            <p>{task.name}</p>
+            <button onClick={() => removeTask(task.id)}>
               <TiDelete />
             </button>
           </div>
         ))}
       </span>
 
-      <button
-        id="SendProject"
-        className="flex m-auto bg-lightBlue text-white p-3 w-[25%] justify-center font-bold rounded-xl text-2xl"
-      >
+      <button id="SendProject">
         Criar!
       </button>
     </form>

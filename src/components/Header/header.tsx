@@ -1,5 +1,4 @@
-
-//Imports necessários
+// Imports necessários
 import { Navbar } from "./navbar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -7,50 +6,46 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import clsx from "clsx";
 
+export const Header = () => {
+  const [isActive, setActive] = useState(false);
 
-
-export const Header = () =>{
-  const [isActive, setActive] = useState(false)
-
-  return(
-    <header className="container-top bg-lightBlue rounded-br-[16px] rounded-bl-[16px] flex w-[100%] content-center align-middle mr-auto
-     text-white h-[100px] items-center p-4 justify-between
-    ">
-      <h1 className="websiteName">
+  return (
+    <header className="header-container">
+      <h1 className="website-name">
         Costs
       </h1>
 
-      <Navbar/>
+      <Navbar />
 
-        <menu className=" transition-all duration-100 mobileMenu  justify-end md:[display:none]">
-        <ul className={`searchList ${isActive ? " transition w-[33.2%] p-6 block absolute top-[85px] left-2/3 transform bg-lightBlue text-white rounded-bl-[16px]" 
-          : "hidden"}`}>
-          <li className="target p-2 pt-4 border-b-[1px] border-b-white mx-auto">
+      <menu className={`menu-container ${isActive ? 'menu-active' : 'menu-hidden'}`}>
+        <ul className={`menu-list ${isActive ? 'menu-visible' : 'menu-hidden'}`}>
+          <li className="menu-item">
             <Link to="/">Home</Link>
           </li>
-          <li className="target p-2 pt-3 border-b-[1px] border-b-white  mx-auto">
+          <li className="menu-item">
             <Link to="/company">Company</Link>
           </li>
-          <li className="target p-2 pt-3 border-b-[1px] border-b-white  mx-auto">
+          <li className="menu-item">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="target p-2  pt-3">
+          <li className="menu-item">
             <Link to="/projects">Projects</Link>
           </li>
-      </ul>
-        </menu>
-        <button
-      onClick={() => setActive(!isActive)}
-      className={clsx(
-         "p-2 rounded-lg transition",
-         "md:hidden",
-      isActive ? " bg-darkBlue text-white" : "bg-white text-pastelBlue"
-      )}
+        </ul>
+      </menu>
+
+      <button
+        onClick={() => setActive(!isActive)}
+        className={clsx(
+          "p-2 rounded-lg transition",
+          "md:hidden",
+          isActive ? "bg-darkBlue text-white" : "bg-white text-pastelBlue"
+        )}
       >
-         {isActive ? <IoMdClose  /> : <CiMenuBurger />}
+        {isActive ? <IoMdClose /> : <CiMenuBurger />}
       </button>
     </header>
   );
 }
 
-export default Header
+export default Header;

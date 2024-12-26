@@ -10,9 +10,9 @@ interface Category {
   name: string;
 }
 
-interface Tasks{
-  name:string,
-  id: string
+interface Tasks {
+  name: string;
+  id: string;
 }
 
 // Interface do meu project
@@ -20,7 +20,7 @@ interface Project {
   id: string;
   name: string;
   category: Category;
-  handleRemove: (id:string) => void;
+  handleRemove: (id: string) => void;
   tasks: Tasks[];
   startDate: string;
   lastDate: string;
@@ -28,8 +28,8 @@ interface Project {
 }
 
 export const Projects = () => {
-  const [projects, setProjects] = useState<Project[]>([])// Tipando o estado com a interface Project
-  const [removeLoading, setRemoveLoading] = useState(false)//Remoção/criação do laoding
+  const [projects, setProjects] = useState<Project[]>([]); // Tipando o estado com a interface Project
+  const [removeLoading, setRemoveLoading] = useState(false); // Remoção/criação do laoding
 
   useEffect(() => {
     fetch("http://localhost:5000/projects", {
@@ -53,28 +53,27 @@ export const Projects = () => {
     message = location.state.message;
   }
 
-  function removeProject(id:string){
+  function removeProject(id: string) {
     fetch(`http://localhost:5000/projects/${id}`, {
       method: "DELETE",
       headers: {
-        "Content-Type": "application/json"
-      }
-    }
-
-    ).then((resp) => resp.json())
-    .then((data =>{
-      setProjects(projects.filter((project) => project.id !== id))
-    }))
-    .catch(err => console.log(err))
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProjects(projects.filter((project) => project.id !== id));
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
-    <div className="min-h-[100vh] pb-[20%]">
-      <h1 className="ml-5 mt-[2.5%] font-bold text-2xl">Meus projetos</h1>
+    <div className="projects-container">
+      <h1 className="projects-title">Meus projetos</h1>
       <LinkButton to="/newproject" text="Novo Projeto" />
       {message && <Message type="success" msg={message} />}
 
-      <div className="projects block w-[80%] m-auto justify-start mt-[10%]">
+      <div className="projects-list">
         {projects.length > 0 &&
           projects.map((project) => (
             <ProjectCard
@@ -89,7 +88,7 @@ export const Projects = () => {
               tasks={project.tasks}
             />
           ))}
-          {!removeLoading && <Loader/>}
+        {!removeLoading && <Loader />}
       </div>
     </div>
   );

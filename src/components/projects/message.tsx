@@ -1,38 +1,35 @@
-
 import { useEffect, useState } from "react";
 
 interface MessageProps{
   msg: string;
-  type: string
+  type: string;
 }
 
-export const Message = ({msg, type}: MessageProps) =>{
+export const Message = ({ msg, type }: MessageProps) => {
+  const [visible, setVisible] = useState(false);
 
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() =>{ //verificar se a mensagme existe
-    if(!msg){
-      setVisible(false)
-      return
-    } else{
-      setVisible(true)
+  useEffect(() => { //verificar se a mensagme existe
+    if (!msg) {
+      setVisible(false);
+      return;
+    } else {
+      setVisible(true);
     }
 
     const timer = setTimeout(() => {
-      setVisible(false)
-    }, 3000)
+      setVisible(false);
+    }, 3000);
 
-    return() => clearTimeout(timer)
-  }, [msg])
+    return () => clearTimeout(timer);
+  }, [msg]);
 
-
-
-  return(
+  return (
     <>
-    {visible &&(
-          <p className="message m-auto bg-green-200 w-[80%] text-center p-2 rounded-md text-green-700 mt-[2.5%] ">{msg}</p>
-    )}
+      {visible && (
+        <p className="message m-auto bg-green-200 w-[80%] text-center p-2 rounded-md text-green-700 mt-[2.5%]">
+          {msg}
+        </p>
+      )}
     </>
-
-  )
+  );
 }

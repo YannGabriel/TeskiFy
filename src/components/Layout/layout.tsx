@@ -12,7 +12,7 @@ import { NewProject } from "../../pages/newproject";
 
 export const Layout = () => {
   return (
-    <div className="bg-red">
+    <div className="bg-red ">
       {/* Envolva toda a estrutura com o Router */}
       <Router>
         <Header />
