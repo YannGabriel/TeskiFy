@@ -1,0 +1,113 @@
+
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: color.$periwinkleSecundary;
+  height: 100px;
+  border-radius: 0px 0px 16px 16px;
+
+  .taskLogo{
+    margin-left: 2.5%;
+  }
+  //Menu Mobile
+  .menuContainer {
+    display: none;  // Inicialmente escondido
+
+    &.menuActive {
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .menuList {
+      position: absolute;
+      top: 90px;
+      left: 70%;
+      list-style: none;
+      width: 30%;
+      padding: 0.5rem;
+      background-color: color.$periwinkleSecundary;
+      border-radius: 0px 0px 0px 16px;
+
+      .menuItem {
+        margin: 8px 0;
+        padding: 0.5rem 0.25rem;
+        font-weight: medium;
+
+        &:not(:last-child){
+          border-bottom: 0.75px solid color.$cloudPrimary;
+        }
+
+        a {
+          color: color.$marronSecundary;
+          font-family: "Poppins";
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .menuButton {
+    padding: 0.575rem;
+    border-radius: 8px;
+    border: none;
+    margin-right: 2.5%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: color.$cloudPrimary;
+    color: color.$marronSecundary;
+
+    &.active {
+      background-color: color.$navyPrimary;
+      color: color.$cloudPrimary;
+    }
+
+    .icon {
+      font-size: 1rem;
+    }
+  }
+
+  //Navbar Menu
+  .navBar{
+    width: 20%;
+    .navList{
+      display: none;
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        list-style: none;
+      }
+      .navItem{
+        a{
+          color: color.$cloudPrimary;
+          text-decoration: none;
+        }
+      }
+    }    
+  }
+
+  // >768px MenuMobile
+  @media (min-width: 768px) {
+    .menu-container {
+      display: flex;
+    }
+
+    .menuList {
+      display: flex;
+
+      .menuItem {
+        margin: 0 16px;
+      }
+    }
+
+    .menuButton {
+      display: none;
+    }
+  }
+}
+

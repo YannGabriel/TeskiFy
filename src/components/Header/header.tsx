@@ -4,31 +4,30 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
-import clsx from "clsx";
+import styles from './header.module.scss';  
 
 export const Header = () => {
   const [isActive, setActive] = useState(false);
+  console.log(styles)
 
   return (
-    <header className="header-container">
-      <h1 className="website-name">
-        Costs
-      </h1>
+    <header className={styles.header}>
+      <img src="" alt="Imagem da logo" className={styles.taskLogo} />
 
       <Navbar />
 
-      <menu className={`menu-container ${isActive ? 'menu-active' : 'menu-hidden'}`}>
-        <ul className={`menu-list ${isActive ? 'menu-visible' : 'menu-hidden'}`}>
-          <li className="menu-item">
+      <menu className={`${styles.menuContainer} ${isActive ? styles.menuActive : ''}`}>
+        <ul className={styles.menuList}>
+          <li className={styles.menuItem}>
             <Link to="/">Home</Link>
           </li>
-          <li className="menu-item">
+          <li className={styles.menuItem}>
             <Link to="/company">Company</Link>
           </li>
-          <li className="menu-item">
+          <li className={styles.menuItem}>
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="menu-item">
+          <li className={styles.menuItem}>
             <Link to="/projects">Projects</Link>
           </li>
         </ul>
@@ -36,13 +35,9 @@ export const Header = () => {
 
       <button
         onClick={() => setActive(!isActive)}
-        className={clsx(
-          "p-2 rounded-lg transition",
-          "md:hidden",
-          isActive ? "bg-darkBlue text-white" : "bg-white text-pastelBlue"
-        )}
+        className={`${styles.menuButton} ${isActive ? styles.active : ''}`}
       >
-        {isActive ? <IoMdClose /> : <CiMenuBurger />}
+        {isActive ? <IoMdClose className={styles.icon} /> : <CiMenuBurger className={styles.icon} />}
       </button>
     </header>
   );
