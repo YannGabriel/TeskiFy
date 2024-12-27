@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./message.module.scss"
 
 interface MessageProps{
   msg: string;
@@ -26,7 +27,7 @@ export const Message = ({ msg, type }: MessageProps) => {
   return (
     <>
       {visible && (
-        <p className="message m-auto bg-green-200 w-[80%] text-center p-2 rounded-md text-green-700 mt-[2.5%]">
+        <p className={styles.message}>
           {msg}
         </p>
       )}

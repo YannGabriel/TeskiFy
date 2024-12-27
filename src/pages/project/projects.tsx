@@ -70,12 +70,14 @@ export const Projects = () => {
   }
 
   return (
-    <div className="projects-container">
-      <h1 className="projects-title">Meus projetos</h1>
-      <LinkButton to="/newproject" text="Novo Projeto" />
+    <div className={styles.projectsPage}>
+      <h1 className={styles.projectPageTitle}>Meus projetos</h1>
+      <div className={styles.newProjectButton}>
+        <LinkButton to="/newproject" text="Novo Projeto" />
+      </div>
       {message && <Message type="success" msg={message} />}
 
-      <div className="projects-list">
+      <div className={styles.projectList}>
         {projects.length > 0 &&
           projects.map((project) => (
             <ProjectCard

@@ -1,4 +1,5 @@
 import { BsFillTrashFill } from "react-icons/bs";
+import styles from "./cardProject.module.scss"
 
 interface Tasks {
   name: string;
@@ -32,31 +33,31 @@ export const ProjectCard = ({
   };
 
   return (
-    <div className="projectCard">
-      <h1 className="ProjectTitle">{name}</h1>
-      <div className="details">
-        <span className="category">{category}</span>
-        <span className="projectid">#{id}</span>
+    <div className={styles.projectCard}>
+      <h1 className={styles.projectName}>{name}</h1>
+      <div className={styles.projectInfos}>
+        <span className={styles.category}>{category}</span>
+        <span className={styles.projectID}>#{id}</span>
       </div>
-      <div className="dates">
-        <span className="startDate">{startDate}</span>
-        <span className="finishDate">{lastDate}</span>
+      <div className={styles.dates}>
+        <span className={styles.startDate}>{startDate}</span>
+        <span className={styles.lastDate}>{lastDate}</span>
       </div>
-      <p className="description">{description}</p>
-      <h3 className="font-semibold">Tarefas:</h3>
-      <div className="tasks">
+      <p className={styles.projectDescription}>{description}</p>
+      <h3 className={styles.tasksTitle}>Tarefas:</h3>
+      <div className={styles.projectTasks}>
         {tasks.length > 0 ? (
           tasks.map((task) => (
-            <p className="task" key={task.id}>
+            <p className={styles.task} key={task.id}>
               {task.name}
             </p>
           ))
         ) : (
-          <p>Não há tarefas!</p>
+          <p className={styles.noTasks}>Não há tarefas!</p>
         )}
       </div>
 
-      <button onClick={remove} className="removeProject">
+      <button onClick={remove} className={styles.removeProject}>
         <BsFillTrashFill />
       </button>
     </div>

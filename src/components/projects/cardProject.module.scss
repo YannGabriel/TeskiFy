@@ -1,0 +1,105 @@
+
+@use "../../sass/colors" as color;
+@use "../../sass/fonts" as fonts;
+
+.projectCard{
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  border: 1px solid color.$periwinkleSecundary;
+  border-radius: 1rem;
+  padding: 0.75rem;
+
+  .projectName{
+    color: color.$navyPrimary;
+    font-family: fonts.$Poppins;
+  }
+
+  .projectInfos{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    .category{
+      color: color.$periwinkleSecundary;
+      font-family: fonts.$Afacada;
+    }
+    .projectID{
+      color: color.$peachSecondary;
+      font-family: fonts.$Roboto;
+      font-size: 0.7rem;
+    }
+  }
+
+  .dates{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 0.5rem 0rem;
+    align-items: center;
+
+    .startDate{
+      background-color: color.$marronSecundary;
+      color: color.$peachSecondary;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      font-family: fonts.$Afacada;
+    }
+
+    .lastDate{
+      background-color: color.$peachSecondary;
+      color: color.$marronSecundary;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      font-family: fonts.$Afacada;
+    }
+  }
+
+  .projectDescription{
+    width: 85%;
+    text-align: justify;
+    color: color.$navyPrimary;
+    font-size: 1rem;
+    font-family: fonts.$Roboto;
+
+    &::first-letter{
+      padding-left: 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .tasksTitle{
+    color: color.$marronSecundary;
+    font-family: fonts.$Poppins;
+    padding: 0.75rem 0.2rem;
+  }
+
+  .projectTasks{
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    justify-content: space-between;
+
+    .task{
+      background-color: color.$peachSecondary;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      color: color.$marronSecundary;
+      text-align: center;
+    }
+  }
+
+  .removeProject{
+    display: block;
+    margin-left: 1rem;
+    background-color: color.$navyPrimary;
+    color: color.$cloudPrimary;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+  }
+}

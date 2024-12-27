@@ -1,0 +1,16 @@
+
+
+  @use "../../sass/colors" as color;
+@use "../../sass/fonts" as fonts;
+
+.message{
+  margin-top: 1rem;
+  margin-left: 2rem;
+  background-color: color.$periwinkleSecundary;
+  width: 60%;
+  padding: 0.5rem;
+  text-align: center;
+  color: color.$cloudPrimary;
+  border-radius: 1rem;
+  font-family: fonts.$Afacada;
+}
