@@ -3,17 +3,19 @@
 @use "../../sass/colors" as color;
 @use "../../sass/fonts" as fonts;
 
+.newProjectsPage{
+  min-height: 100vh;
 
-.newProjectPageTitle{
-  color: color.$navyPrimary;
-  font-size: 2rem;
-  padding-left: 2.5%;
-  padding-top: 5%;
-  font-family: fonts.$Poppins;
-  font-weight: 700;
-}
+  .newProjectPageTitle{
+    color: color.$navyPrimary;
+    font-size: 2rem;
+    padding-left: 2.5%;
+    padding-top: 5%;
+    font-family: fonts.$Poppins;
+    font-weight: 700;
+  }
 
-.projectPageDescription{
+  .projectPageDescription{
   width: 85%;
   padding-left: 3%;
   color: color.$marronSecundary;
@@ -24,4 +26,5 @@
     font-size: 1.2rem;
   }
 
+}
 }

@@ -1,0 +1,37 @@
+@use './sass/fonts.scss' as fonts;
+@use './sass/colors' as color;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100vh;
+  background-color: color.$cloudPrimary;
+  scrollbar-width: thin;
+  scrollbar-color: color.$periwinkleSecundary transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: red;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: color.$marronSecundary;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: color.$peachSecondary;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}

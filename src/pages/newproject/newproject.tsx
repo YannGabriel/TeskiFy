@@ -25,7 +25,7 @@ export const NewProject = () => {
   }
 
   return (
-    <div className="NewProjectPage">
+    <div className={styles.newProjectsPage}>
       <h1 id="pageCalledTittle" className={styles.newProjectPageTitle}>
         Crie seu Projeto!
       </h1>
