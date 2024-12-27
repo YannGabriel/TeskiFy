@@ -1,0 +1,76 @@
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+.homeContainer{
+  min-height: 90vh;
+
+  .homeTitle{
+    color: color.$navyPrimary;
+    font-family: fonts.$Afacada;
+    text-align: center; 
+    padding-top: 3rem;
+    @media(min-width: 800px){
+      text-align: start;
+      padding-left: 2%;
+    }
+  }
+
+  .homeParagraph{
+    text-align: center;
+    width: 85%;
+    margin: auto;
+    font-size: 1rem;
+    font-family: fonts.$Roboto;
+    color: color.$navyPrimary;
+    font-weight: medium;
+    
+    @media(min-width: 800px){
+      text-align: start;
+      margin: 0;
+      padding-top: 1.25rem;
+      font-size: 1.2rem;
+      width: 40%;
+      margin-left: 2%;
+  
+      &::first-letter{
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .homeImage{
+    width: 80%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    @media (min-width: 800px){
+      width: 40%;
+      margin-right: 1.5rem;
+      float: right;
+    }
+  }
+
+  .homeText{
+    text-align: center;
+    font-size: 1.3rem;
+    padding-top: 1.5rem;
+    color: color.$marronSecundary;
+    font-family: fonts.$Poppins;
+    font-weight: 500;
+    @media(min-width: 800px){
+      text-align: start;
+      padding-left: 2%;
+    }
+  }
+
+  .createButton{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    @media(min-width: 800px){
+      justify-content: start;
+      margin-left: 2%;
+    }
+  }
+}

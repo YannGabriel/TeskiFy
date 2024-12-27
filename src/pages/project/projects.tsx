@@ -1,9 +1,9 @@
-import { Message } from "../components/projects/message";
+import { Message } from "../../components/projects/message";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { LinkButton } from "../components/buttons/newProjectButton";
-import { ProjectCard } from "../components/projects/projectCard";
-import { Loader } from "../components/Layout/loader";
+import { LinkButton } from "../../components/buttons/newProjectButton";
+import { ProjectCard } from "../../components/projects/projectCard";
+import { Loader } from "../../components/Layout/loader";
 
 interface Category {
   id: string;

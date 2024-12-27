@@ -1,0 +1,19 @@
+
+
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+.newButton{
+  a{
+    color: color.$cloudPrimary;
+    background-color: color.$periwinkleSecundary;
+    width: 200px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: fonts.$Poppins;
+    font-weight: 600;
+  }
+}

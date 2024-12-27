@@ -3,12 +3,12 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../Header/header";
-import { Contact } from "../../pages/contact";
-import { Projects } from "../../pages/projects";
-import { Company } from "../../pages/company";
-import Home from "../../pages/home";
+import { Contact } from "../../pages/contact/contact";
+import { Projects } from "../../pages/project/projects";
+import { Company } from "../../pages/company/company";
+import Home from "../../pages/home/home";
 import { Footer } from "../Footer/footer";
-import { NewProject } from "../../pages/newproject";
+import { NewProject } from "../../pages/newproject/newproject";
 
 export const Layout = () => {
   return (
