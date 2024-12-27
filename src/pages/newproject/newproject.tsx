@@ -1,5 +1,6 @@
 import { ProjectForm } from "../../components/Form/form";
 import { useNavigate } from "react-router-dom";
+import styles from "./newProject.module.scss"
 
 export const NewProject = () => {
   const navigate = useNavigate();
@@ -25,12 +26,13 @@ export const NewProject = () => {
 
   return (
     <div className="NewProjectPage">
-      <h1 id="pageCalledTittle">
+      <h1 id="pageCalledTittle" className={styles.newProjectPageTitle}>
         Crie seu Projeto!
       </h1>
 
-      <p id="aboutTittle">
-        Crie seus projetos, se organize e melhore sua produtividade!
+      <p id="aboutTittle" className={styles.projectPageDescription}>
+      Comece agora a criar seus projetos, organize suas ideias e alcance uma produtividade ainda maior! 
+      Complete o formulário abaixo e dê vida aos seus objetivos.
       </p>
 
       <ProjectForm handleSubmit={createPost} />

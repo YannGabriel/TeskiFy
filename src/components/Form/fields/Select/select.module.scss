@@ -1,0 +1,30 @@
+@use '../../../../sass/fonts.scss' as fonts;
+@use '../../../../sass/colors' as color;
+
+.selectContainer {
+  background-color: color.$periwinkleSecundary;
+  color: color.$cloudPrimary;
+  padding: 0.5rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  border: none;
+  width: 80%;
+  margin: auto;
+  display: block;
+  outline: none;
+  margin-bottom: 1.5rem;
+  appearance: none;
+  font-family: fonts.$Afacada;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+
+  &:focus {
+    background-color: color.$navyPrimary;
+    border: none;
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+
+  option {
+    background-color: color.$periwinkleSecundary; 
+    color: color.$cloudPrimary; 
+}
+}

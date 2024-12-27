@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { LinkButton } from "../../components/buttons/newProjectButton";
 import { ProjectCard } from "../../components/projects/projectCard";
 import { Loader } from "../../components/Layout/loader";
+import styles from "./project.module.scss"
+
 
 interface Category {
   id: string;

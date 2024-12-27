@@ -1,0 +1,110 @@
+
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+
+.formContent{
+  padding: 5% 0%;
+  width: 80%;
+  margin: auto;
+
+  .descriptionBox{
+    display: block;
+    margin: auto;
+    outline: none;
+    width: 80%;
+    height: 100px;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    border: solid 1px color.$periwinkleSecundary;
+    font-family: fonts.$Roboto;
+    background-color: transparent;
+
+    &:focus{
+      border: 1.75px solid color.$marronSecundary;
+    }
+  }
+
+  .datesTexts{
+    font-size: 0.8rem;
+    font-family: fonts.$Poppins;
+    color: color.$marronSecundary;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .tasksField{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    .tasksButton{
+      padding: 0.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: color.$navyPrimary;
+      color: color.$cloudPrimary;
+      transition: all 0.5s ease;
+
+      &:active{
+        color: color.$marronSecundary;
+        background-color: color.$peachSecondary;
+      }
+    }
+  }
+
+  .tasksContainer{
+    width: 80%;
+    display: block;
+    margin: auto;
+  
+    .tasksViewport{
+      width: 95%;
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      margin-bottom: 0.25rem;
+
+      .taskText{
+        background-color: color.$periwinkleSecundary;
+        color: color.$cloudPrimary;
+        font-family: fonts.$Roboto;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: 0.5rem 0rem 0rem 0.5rem;
+      }
+
+      .deleteButton{
+        background-color: color.$navyPrimary;
+        color: color.$cloudPrimary;
+        padding: 0.15rem 0.35rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 0rem 0.5rem 0.5rem 0rem;
+      }
+    }
+  }
+
+  .sendButton{
+    width: 70%;
+    display: block;
+    margin: auto;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    color: color.$marronSecundary;
+    background-color: color.$peachSecondary;
+    font-family: fonts.$Poppins;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 0.5rem;
+  }
+}

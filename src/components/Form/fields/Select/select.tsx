@@ -1,3 +1,6 @@
+
+import styles from "./select.module.scss"
+
 interface SelectProps {
   name: string;
   value: any;
@@ -8,16 +11,17 @@ interface SelectProps {
 export const Select = ({ name, options, onChange, value }: SelectProps) => {
   return (
     <select
+    className={styles.selectContainer}
       onChange={onChange}
       name={name}
       id={name}
       value={value || ''}
     >
-      <option value="">Escolha a categoria:</option> {/* Melhor deixar o value vazio */}
-      {options.map((option) => (
-        <option value={option.id} key={option.id}>
-          {option.name}
-        </option>
+        <option value="" className={styles.optionValueStart}>Escolha a categoria:</option>
+        {options.map((option) => (
+          <option value={option.id} key={option.id} className={styles.optionValue}>
+            {option.name}
+          </option>
       ))}
     </select>
   );

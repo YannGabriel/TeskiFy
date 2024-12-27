@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { TiDelete } from "react-icons/ti";
-import { Input } from "./input";
-import { Select } from "./select";
+import { Input } from "./fields/Input/input";
+import { Select } from "./fields/Select/select";
+import styles from "./form.module.scss"
 
 interface ProjectsProps {
   handleSubmit: any;
@@ -72,7 +73,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
   }, []);
 
   return (
-    <form onSubmit={submit}>
+    <form onSubmit={submit} className={styles.formContent}>
       <Input
         type="text"
         placeholder="Insira o nome do projeto"
@@ -86,8 +87,9 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
         id="ProjectInfos"
         placeholder="Descrição do projeto"
         onChange={handleChange}
+        className={styles.descriptionBox}
       ></textarea>
-      <span>Data de Inicio</span>
+      <span className={styles.datesTexts}>Data de Inicio</span>
       <Input
         type="date"
         placeholder="Data Inicial do Projeto"
@@ -96,7 +98,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
         id="DateStart"
         onChange={handleChange}
       />
-      <span>Data de Término (prevista)</span>
+      <span className={styles.datesTexts}>Data de Término (prevista)</span>
       <Input
         type="date"
         placeholder="Data Final do projeto"
@@ -112,7 +114,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
         onChange={handleCategory}
       />
 
-      <div>
+      <div className={styles.tasksField}>
         <Input
           name="tasks"
           type="text"
@@ -121,23 +123,23 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
           value={currentTask}
           onChange={(e) => setCurrentTask(e.target.value)}
         />
-        <button onClick={addTask}>Add</button>
+        <button onClick={addTask} className={styles.tasksButton}>Add</button>
       </div>
 
       <p></p>
 
-      <span>
+      <span className={styles.tasksContainer}>
         {project.tasks.map((task) => (
-          <div key={task.id}>
-            <p>{task.name}</p>
-            <button onClick={() => removeTask(task.id)}>
+          <div key={task.id} className={styles.tasksViewport}>
+            <p className={styles.taskText}>{task.name}</p>
+            <button className={styles.deleteButton} onClick={() => removeTask(task.id)}>
               <TiDelete />
             </button>
           </div>
         ))}
       </span>
 
-      <button id="SendProject">
+      <button id="SendProject" className={styles.sendButton}>
         Criar!
       </button>
     </form>

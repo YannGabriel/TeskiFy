@@ -1,3 +1,6 @@
+
+import styles from "./input.module.scss"
+
 interface inputProps {
   type: string;
   name: string;
@@ -10,6 +13,7 @@ interface inputProps {
 export const Input = ({ type, placeholder, id, value, onChange, name }: inputProps) => {
   return (
     <input
+    className={styles.inputField}
       type={type}
       name={name}
       placeholder={placeholder}

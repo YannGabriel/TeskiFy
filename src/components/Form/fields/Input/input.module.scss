@@ -1,0 +1,21 @@
+
+
+@use '../../../../sass/fonts.scss' as fonts;
+@use '../../../../sass/colors' as color;
+
+.inputField{
+  display: block;
+  margin: auto;
+  border: none;
+  outline: none;
+  width: 85%;
+  border-bottom: 1px solid color.$periwinkleSecundary;
+  margin-bottom: 1rem;
+  font-family: fonts.$Roboto;
+  background-color: transparent;
+  padding: 0.125rem;
+
+  &:focus{
+    border-bottom: 1.5px solid color.$navyPrimary;
+  }
+}
