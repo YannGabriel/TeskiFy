@@ -12,6 +12,8 @@
 
   .taskLogo {
     margin-left: 2.5%;
+    width: 60px;
+    height: 60px;
   }
 
   .menuContainer {
@@ -25,9 +27,9 @@
     .menuList {
       position: absolute;
       top: 90px;
-      left: 70%;
+      left: 60%;
       list-style: none;
-      width: 30%;
+      width: 40%;
       padding: 0.5rem;
       background-color: color.$periwinkleSecundary;
       border-radius: 0px 0px 0px 16px;
@@ -42,7 +44,7 @@
         }
 
         a {
-          color: color.$marronSecundary;
+          color: color.$cloudPrimary;
           font-family: fonts.$Poppins;
           text-decoration: none;
           transition: color 0.3s ease;
@@ -52,7 +54,7 @@
   }
 
   .menuButton {
-    padding: 0.575rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 8px;
     border: none;
     margin-right: 2.5%;
@@ -68,6 +70,7 @@
 
     .icon {
       font-size: 1rem;
+      font-weight: bold;
     }
   }
 

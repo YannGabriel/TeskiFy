@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
+import taskLogo from "../../images/taskLogo.svg"
 import styles from './header.module.scss';  
 
 export const Header = () => {
@@ -12,7 +13,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <img src="" alt="Imagem da logo" className={styles.taskLogo} />
+      <img src={taskLogo} alt="Imagem da logo" className={styles.taskLogo} />
 
       <Navbar />
 

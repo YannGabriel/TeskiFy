@@ -1,0 +1,52 @@
+
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+.footerContainer{
+  background-color: color.$periwinkleSecundary;
+  border-radius: 16px 16px 0px 0px;
+  padding: 1rem;
+
+  @media(min-width: 800px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footerName{
+    color: color.$cloudPrimary;
+    font-family: fonts.$Poppins;
+    font-weight: bold;
+    font-size: 1.4rem;
+    @media(min-width: 800px){
+      font-size: 2rem;
+    }
+  }
+
+  .footerParagraph{
+    width: 80%;
+    text-align: justify;
+    color: color.$navyPrimary;
+    font-family: fonts.$Roboto;
+    padding-bottom: 1rem;
+    @media(min-width: 800px){
+      font-size: 1.3rem;
+    }
+  }
+
+  .mediaContent{
+    display: flex;
+    width: 40%;
+    .footerIcon{
+      text-decoration: none;
+      color: color.$cloudPrimary;  
+      font-size: 1.5rem;
+      width: 40%;
+      justify-content: space-between;
+    }
+    @media(min-width: 800px){
+      margin-top: 12.5%;
+      margin: auto;
+    }
+  }
+
+}
