@@ -44,7 +44,7 @@
 
         a {
           color: color.$marronSecundary;
-          font-family: "Poppins";
+          font-family: fonts.$Poppins;
           text-decoration: none;
         }
       }
@@ -78,17 +78,37 @@
       display: none;
       @media (min-width: 768px) {
         display: flex;
-        justify-content: space-between;
-        width: 90%;
+        justify-content: space-around;
+        margin-right: 5%;
+        gap: 0.75rem;
         list-style: none;
       }
       .navItem{
         a{
           color: color.$cloudPrimary;
+          font-family: fonts.$Poppins;
           text-decoration: none;
+          animation: fadeIn 1s ease-in;
+
+          &:hover{
+            color: color.$marronSecundary;
+          }
         }
       }
     }    
+  }
+
+  //Animação fadeIn para texto no Header
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   // >768px MenuMobile
