@@ -26,14 +26,15 @@ export const NewProject = () => {
 
   return (
     <div className={styles.newProjectsPage}>
-      <h1 id="pageCalledTittle" className={styles.newProjectPageTitle}>
-        Crie seu Projeto!
-      </h1>
-
-      <p id="aboutTittle" className={styles.projectPageDescription}>
-      Comece agora a criar seus projetos, organize suas ideias e alcance uma produtividade ainda maior! 
-      Complete o formulário abaixo e dê vida aos seus objetivos.
-      </p>
+      <div className={styles.newProjectsContent}>
+        <h1 id="pageCalledTittle" className={styles.newProjectPageTitle}>
+          Crie seu Projeto!
+        </h1>
+        <p id="aboutTittle" className={styles.projectPageDescription}>
+        Comece agora a criar seus projetos, organize suas ideias e alcance uma produtividade ainda maior!
+        Complete o formulário abaixo e dê vida aos seus objetivos.
+        </p>
+      </div>
 
       <ProjectForm handleSubmit={createPost} />
     </div>

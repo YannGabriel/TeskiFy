@@ -5,6 +5,16 @@
 
 .newProjectsPage{
   min-height: 100vh;
+  padding-bottom: 10%;
+  @media (min-width: 1200px){
+    display: grid;
+    grid-template-columns: 40% 40%;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
 
   .newProjectPageTitle{
     color: color.$navyPrimary;
@@ -20,10 +30,18 @@
   padding-left: 3%;
   color: color.$marronSecundary;
   font-family: fonts.$Afacada;
+  @media (min-width: 1200px){
+    width: 90%;
+    text-align: justify;
+    font-size: 1.8rem;
+  }
 
   &::first-letter{
     padding-left: 3.5%;
     font-size: 1.2rem;
+    @media (min-width: 1200px){
+      font-size: 2rem;
+    }
   }
 
 }
