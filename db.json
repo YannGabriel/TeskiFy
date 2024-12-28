@@ -1,35 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "bf6a",
-      "name": "teste 1",
-      "description": "descrição teste do projeto para estilização posterior",
-      "startDate": "2005-08-30",
-      "lastDate": "2025-08-30",
-      "category": {
-        "id": "1",
-        "name": "Web Development"
-      },
-      "tasks": [
-        {
-          "id": "1735330834549",
-          "name": "teste1"
-        },
-        {
-          "id": "1735330836472",
-          "name": "teste2"
-        },
-        {
-          "id": "1735330838612",
-          "name": "teste3"
-        },
-        {
-          "id": "1735330840049",
-          "name": "teste4"
-        }
-      ]
-    }
-  ],
+  "projects": [],
   "category": [
     {
       "id": "1",
