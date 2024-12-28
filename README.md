@@ -1,46 +1,123 @@
-# Getting Started with Create React App
+# Projeto TaskiFY 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br><br>
 
-## Available Scripts
+# Português/Brasil 🇧🇷
 
-In the project directory, you can run:
+TaskiFY é uma aplicação desenvolvida para facilitar a criação, organização e gerenciamento de projetos. Com um banco de dados temporário por usuário, você pode organizar suas tarefas diárias e acompanhar o progresso de todas as suas atividades de forma simples e eficiente. 🗂️
 
-### `npm start`
+## Como começar 🚀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1- Clone este repositório:
+    [TaskiFY no GitHub 🖥️](https://github.com/YannGabriel/TeskiFy)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br>
 
-### `npm test`
+2- Instale todas as dependências necessárias com o seguinte comando:
+   ```bash
+   npm start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br><br>
 
-### `npm run build`
+   **Dependências utilizadas:**
+   - `@testing-library/jest-dom@5.17.0`🧪
+   - `@testing-library/react@13.4.0`⚛️
+   - `@testing-library/user-event@13.5.0`🖱️
+   - `@types/jest@27.5.2`📝
+   - `@types/node@16.18.121`🖥️
+   - `@types/react-dom@18.3.1`🌐
+   - `@types/react@18.3.12`⚛️
+   - `autoprefixer@10.4.20`🔧
+   - `clsx@2.1.1` 🔡
+   - `json-server@1.0.0-beta.3`🗄️
+   - `postcss@8.4.49`🧵
+   - `react-dom@18.3.1`🌍
+   - `react-icons@5.3.0`🎨
+   - `react-router-dom@7.0.1`🛣️
+   - `react-scripts@5.0.1`📜
+   - `react@18.3.1`⚛️
+   - `sass@1.83.0`🧶
+   - `typescript@4.9.5`💻
+   - `uuid@11.0.3`🔑
+   - `web-vitals@2.1.4`📊
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3- **Execute o projeto localmente:**
+   - Inicie o servidor da aplicação com o comando:
+     ```bash
+     npm start
+     ```
+   - Em seguida, abra um novo terminal e inicialize o banco de dados com:
+     ```bash
+     npm run backend
+     ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Assim, todos os serviços necessários estarão ativos para você utilizar a aplicação. 🖥️🔧
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contribuições💡
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Este projeto está aberto a melhorias e críticas construtivas para que possa ser constantemente aprimorado. Caso tenha alguma sugestão, envie seu commit para uma página open source e compartilhe conosco. Sua colaboração é muito bem-vinda!🤝
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> **Nota:** Atualmente, TaskiFY funciona exclusivamente no ambiente local. Futuras atualizações estão planejadas para transformá-lo em um aplicativo baseado na web com funcionalidades de rede!🌐
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br><br>
 
-## Learn More
+# English/USA 🇺🇸
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1- Clone this repository:
+ [TaskiFY on GitHub 🖥️](https://github.com/YannGabriel/TeskiFy)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br><br>
+2- Install all the necessary dependencies with the following command:
+```
+npm install
+```
+
+**Dependencies used:**
+- `@testing-library/jest-dom@5.17.0`🧪
+- `@testing-library/react@13.4.0`⚛️
+- `@testing-library/user-event@13.5.0`🖱️
+- `@types/jest@27.5.2`📝
+- `@types/node@16.18.121`🖥️
+- `@types/react-dom@18.3.1`🌐
+- `@types/react@18.3.12`⚛️
+- `autoprefixer@10.4.20`🔧
+- `clsx@2.1.1` 🔡
+- `json-server@1.0.0-beta.3`🗄️
+- `postcss@8.4.49`🧵
+- `react-dom@18.3.1`🌍
+- `react-icons@5.3.0`🎨
+- `react-router-dom@7.0.1`🛣️
+- `react-scripts@5.0.1`📜
+- `react@18.3.1`⚛️
+- `sass@1.83.0`🧶
+- `typescript@4.9.5`💻
+- `uuid@11.0.3`🔑
+- `web-vitals@2.1.4`📊
+
+<br>
+
+3- **Run the project locally:**
+- Start the application server with the following command:
+  ```bash
+  npm start
+  ```
+- Then, open a new terminal and initialize the database with:
+  ```bash
+  npm run backend
+  ```
+
+This way, all the necessary services will be up and running for you to use the application. 🖥️🔧
+
+<br>
+
+## Contributions 💡
+
+This project is open to improvements and constructive criticism to keep it constantly improving. If you have any suggestions, send your commit to an open-source page and share it with us. Your collaboration is very welcome! 🤝
+
+> **Note:** Currently, TaskiFY works exclusively in the local environment. Future updates are planned to transform it into a web-based application with networking features! 🌐
+
