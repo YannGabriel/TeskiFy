@@ -1,11 +1,15 @@
 
 
+@use "../../sass/colors" as color;
+@use "../../sass/fonts" as fonts;
+
+
 .loaderContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
-  background-color: #f4f4f4;
+  background-color: color.$cloudPrimary;
 }
 
 .loaderIcon {
