@@ -1,16 +1,29 @@
 {
   "projects": [
     {
-      "id": "d850",
-      "name": "Nome 1",
-      "description": "a",
-      "startDate": "",
-      "lastDate": "",
+      "id": "64be",
+      "name": "Recanto do vale",
+      "description": "Projeto de criação de um website para a pousada Recanto do Vale",
+      "startDate": "2024-12-31",
+      "lastDate": "2025-01-31",
       "category": {
-        "id": "",
-        "name": ""
+        "id": "1",
+        "name": "Web Development"
       },
-      "tasks": []
+      "tasks": [
+        {
+          "id": "1735439537469",
+          "name": "escolha das cores"
+        },
+        {
+          "id": "1735439542005",
+          "name": "escolhas das imagens"
+        },
+        {
+          "id": "1735439548717",
+          "name": "escolhas das postagens"
+        }
+      ]
     }
   ],
   "category": [

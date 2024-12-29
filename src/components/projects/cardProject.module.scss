@@ -79,13 +79,12 @@
   .projectTasks{
     width: 85%;
     margin: auto;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
     gap: 1rem;
     padding-bottom: 1.5rem;
     justify-content: space-between;
 
     .task{
+      margin-bottom: 0.75rem;
       background-color: color.$peachSecondary;
       padding: 0.25rem 0.5rem;
       border-radius: 0.5rem;

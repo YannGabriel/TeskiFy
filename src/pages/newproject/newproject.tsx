@@ -36,7 +36,7 @@ export const NewProject = () => {
         </p>
       </div>
 
-      <ProjectForm handleSubmit={createPost} />
+      <ProjectForm handleSubmit={createPost} btnText="Criar Projeto" />
     </div>
   );
 };

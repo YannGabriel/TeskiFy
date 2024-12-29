@@ -1,0 +1,98 @@
+
+@use "../../sass/colors" as color;
+@use "../../sass/fonts" as fonts;
+
+
+.editProjectContainer{
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: fonts.$Roboto;
+
+  .projectsInfos{
+    width: 90%;
+    margin: auto;
+    display: block;
+
+    .projectName{
+      color: color.$navyPrimary;
+      font-family: fonts.$Poppins;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+    .editButton{
+      margin: 1rem 0rem;
+      background-color: color.$peachSecondary;
+      color: color.$marronSecundary;
+      border: none;
+      width: 60%;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: fonts.$Afacada;
+    }
+
+    .category{
+      padding: 0.25rem 0rem;
+      span{
+        font-weight: bold;
+        color: color.$periwinkleSecundary;
+      }
+      color: color.$navyPrimary;
+      font-weight: 500;
+    }
+
+    .descriptionParagraph{
+      padding: 0.25rem 0rem;
+      .description{
+        width: 80%;
+        color: color.$navyPrimary;
+        font-weight: 500;
+        span{
+          font-weight: bold;
+          color: color.$periwinkleSecundary;
+        }
+      }
+    }
+
+    .dates{
+      display: block;
+      padding: 0.5rem 0rem;
+      .startDate, .lastDate{
+        font-size: 0.9rem;
+        font-weight: 800;
+        font-family: fonts.$Poppins;
+        padding: 0.25rem 0rem;
+      }
+
+      .startDate{
+        color: color.$peachSecondary;
+      }
+
+      .lastDate{
+        color: color.$marronSecundary;
+      }
+    }
+
+    .projectTasks{
+      .tasksTitle{
+        font-family: fonts.$Poppins;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: color.$navyPrimary;
+      }
+
+      .tasksList{
+        list-style-type: none;
+        padding: 0.5rem;
+
+        .taskName{
+          padding: 0.125rem 0rem;
+          color: color.$periwinkleSecundary;
+          font-weight: 800;
+          font-family: fonts.$Afacada;
+        }
+      }
+    }
+  }
+}

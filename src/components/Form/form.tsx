@@ -6,9 +6,11 @@ import styles from "./form.module.scss"
 
 interface ProjectsProps {
   handleSubmit: any;
+  projectData?: any
+  btnText: string;
 }
 
-export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
+export const ProjectForm = ({ handleSubmit, projectData, btnText }: ProjectsProps) => {
   const [project, setProject] = useState({
     name: "",
     description: "",
@@ -140,7 +142,7 @@ export const ProjectForm = ({ handleSubmit }: ProjectsProps) => {
       </span>
 
       <button id="SendProject" className={styles.sendButton}>
-        Criar!
+        {btnText}
       </button>
     </form>
   );
