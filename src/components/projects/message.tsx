@@ -3,7 +3,7 @@ import styles from "./message.module.scss"
 
 interface MessageProps{
   msg: string;
-  type: string;
+  type? : string;
 }
 
 export const Message = ({ msg, type }: MessageProps) => {
@@ -19,7 +19,7 @@ export const Message = ({ msg, type }: MessageProps) => {
 
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [msg]);
@@ -27,7 +27,7 @@ export const Message = ({ msg, type }: MessageProps) => {
   return (
     <>
       {visible && (
-        <p className={styles.message}>
+        <p className={styles.message} typeof={type}>
           {msg}
         </p>
       )}

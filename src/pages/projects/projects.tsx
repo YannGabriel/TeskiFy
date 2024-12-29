@@ -74,7 +74,9 @@ export const Projects = () => {
       <div className={styles.newProjectButton}>
         <LinkButton to="/newproject" text="Novo Projeto" />
       </div>
-      {message && <Message type="success" msg={message} />}
+      <div className={styles.messageContainer}>
+        {message && <Message type="success" msg={message} />}
+        </div>
 
       <div className={styles.projectList}>
         {projects.length > 0 &&

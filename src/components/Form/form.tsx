@@ -12,12 +12,8 @@ interface ProjectsProps {
 
 export const ProjectForm = ({ handleSubmit, projectData, btnText }: ProjectsProps) => {
   const [project, setProject] = useState({
-    name: "",
-    description: "",
-    startDate: "",
-    lastDate: "",
-    category: { id: "", name: "" },
-    tasks: [] as { id: string; name: string }[],
+    ...projectData,
+    tasks: projectData?.tasks || [],  // Inicializa tasks como um array vazio se não estiver definido
   });
 
   const [currentTask, setCurrentTask] = useState("");
@@ -45,7 +41,7 @@ export const ProjectForm = ({ handleSubmit, projectData, btnText }: ProjectsProp
     event.preventDefault();
     if (currentTask.trim() !== "") {
       const newTask = { id: Date.now().toString(), name: currentTask };
-      setProject((prevProject) => ({
+      setProject((prevProject: any) => ({
         ...prevProject,
         tasks: [...prevProject.tasks, newTask],
       }));
@@ -54,9 +50,9 @@ export const ProjectForm = ({ handleSubmit, projectData, btnText }: ProjectsProp
   };
 
   const removeTask = (idToRemove: string) => {
-    setProject((prevProject) => ({
+    setProject((prevProject: any) => ({
       ...prevProject,
-      tasks: prevProject.tasks.filter((task) => task.id !== idToRemove),
+      tasks: prevProject.tasks.filter((task: any) => task.id !== idToRemove),
     }));
   };
 
@@ -131,7 +127,7 @@ export const ProjectForm = ({ handleSubmit, projectData, btnText }: ProjectsProp
       <p></p>
 
       <span className={styles.tasksContainer}>
-        {project.tasks.map((task) => (
+        {project.tasks.map((task:any) => (
           <div key={task.id} className={styles.tasksViewport}>
             <p className={styles.taskText}>{task.name}</p>
             <button className={styles.deleteButton} onClick={() => removeTask(task.id)}>

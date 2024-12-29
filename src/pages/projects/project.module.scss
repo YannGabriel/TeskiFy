@@ -4,6 +4,7 @@
 
 .projectsPage{
   min-height: 100vh;
+  padding-bottom: 3rem;
 
   .projectPageTitle{
     color: color.$navyPrimary;
@@ -14,6 +15,11 @@
   }
 
   .newProjectButton{
+    margin-left: 2rem;
+  }
+
+  .messageContainer{
+    width: 60%;
     margin-left: 2rem;
   }
 

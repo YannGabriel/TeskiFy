@@ -8,8 +8,14 @@
   padding: 2rem;
   font-family: fonts.$Roboto;
 
+  .messageContainer{
+    width: 80%;
+    text-align: start;
+    margin: 2rem 0rem;
+  }
+
   .projectsInfos{
-    width: 90%;
+    width: 95%;
     margin: auto;
     display: block;
 
@@ -95,4 +101,5 @@
       }
     }
   }
+
 }

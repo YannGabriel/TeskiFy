@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Loader } from "../../components/Layout/loader";
 import { useState, useEffect } from "react";
 import { ProjectForm } from "../../components/Form/form";
+import { Message } from "../../components/projects/message";
 
 interface Category {
   id?: string;
@@ -29,30 +30,52 @@ export const Project = () => {
   const { id } = useParams();
   const [project, setProject] = useState<Project>({});
   const [showProjectForm, setProjectForm] = useState(false);
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
 
   function toggleProjectForm() {
     setProjectForm(!showProjectForm);
   }
 
+  function editPost(project: any) {
+    fetch(`http://localhost:5000/projects/${project.id}`, {
+      method: "PATCH", //atualiza o projeto (so o que foi mudado)
+      headers: {
+        "Content-Type": "application.json",
+      },
+      body: JSON.stringify(project), //projeto vira tetxo
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(data);
+        setProjectForm(false);
+        setType("Sucess");
+        setMessage("Atualização feita com sucesso!");
+      })
+      .catch((err) => console.log(err));
+  }
+
   useEffect(() => {
-    setTimeout(
-      () =>
-        fetch(`http://localhost:5000/projects/${id}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+    setTimeout(() =>
+      fetch(`http://localhost:5000/projects/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((resp) => resp.json())
+        .then((data: Project) => {
+          setProject(data);
         })
-          .then((resp) => resp.json())
-          .then((data: Project) => {
-            setProject(data);
-          })
-          .catch((err) => console.error("Erro ao buscar projeto:", err)),
+        .catch((err) => console.error("Erro ao buscar projeto:", err))
     );
   }, [id]);
 
   return (
     <div className={styles.editProjectContainer}>
+      <div className={styles.messageContainer}>
+        {message && <Message type={type} msg={message} />}
+      </div>
       {project.name ? (
         <div className={styles.projectsInfos}>
           <h1 className={styles.projectName}>Projeto: {project.name}</h1>
@@ -62,13 +85,14 @@ export const Project = () => {
 
           {!showProjectForm ? (
             <div className={styles.projectDetails}>
-
               <p className={styles.category}>
                 <span>Categoria: </span> {project.category?.name}
               </p>
 
               <article className={styles.descriptionParagraph}>
-                <p className={styles.description}><span>Descrição:</span> {project.description}</p>
+                <p className={styles.description}>
+                  <span>Descrição:</span> {project.description}
+                </p>
               </article>
 
               <div className={styles.dates}>
@@ -87,7 +111,9 @@ export const Project = () => {
                 {project.tasks?.length ? (
                   <ul className={styles.tasksList}>
                     {project.tasks.map((task) => (
-                      <li key={task.id} className={styles.taskName}>{task.name}</li>
+                      <li key={task.id} className={styles.taskName}>
+                        {task.name}
+                      </li>
                     ))}
                   </ul>
                 ) : (
@@ -96,8 +122,12 @@ export const Project = () => {
               </div>
             </div>
           ) : (
-            <div>
-              <p>detalhes do projeto</p>
+            <div className={styles.projectForm}>
+              <ProjectForm
+                handleSubmit={editPost}
+                btnText="Editar Projeto"
+                projectData={project}
+              />
             </div>
           )}
         </div>
