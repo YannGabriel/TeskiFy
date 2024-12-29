@@ -13,10 +13,7 @@ export const ContactCard = () =>{
 
   useEffect(() =>{
     fetch("https://raw.githubusercontent.com/YannGabriel/TeskiFy/refs/heads/main/contacts.json", {
-      method: "GET",
-      headers:{
-        "Content-Type": "application/json"
-      }
+      method: "GET"
     }).then((resp) => resp.json())
     .then((data) =>{
       setContacts(data.contacts)
