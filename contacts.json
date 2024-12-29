@@ -1,0 +1,22 @@
+{
+  "contacts":[
+    {
+      "name": "Whatsapp",
+      "text": "Entre em contato para saber mais dos meus projetos e serviços!",
+      "image": "../../images/contactsImages/Whatsapp.svg",
+      "link": "https://wa.me/5511993125933"
+    },
+    {
+      "name": "Github",
+      "text": "Veja mais sobre meus códigos e sobre o que estou desenvolvendo!",
+      "image": "../../images/contactsImages/Github.svg",
+      "link": "https://github.com/YannGabriel"
+    },
+    {
+      "name": "Linkedin",
+      "text": "Saiba mais sobre minha vida profissonal, o que estou estudando e fazendo no mundo da tecnologia!",
+      "image": "../../images/contactsImages/Linkedin.svg",
+      "link": "https://linkedin.com/in/yann-gabriel-dev"
+    }
+  ]
+}
