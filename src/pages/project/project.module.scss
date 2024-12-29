@@ -18,6 +18,13 @@
     width: 95%;
     margin: auto;
     display: block;
+    @media(width >= 1200px){
+      text-align: center;
+      width: 30%;
+      border: 0.5px solid color.$peachSecondary;
+      padding: 1rem;
+      border-radius: 1rem;;
+    }
 
     .projectName{
       color: color.$navyPrimary;
@@ -27,6 +34,7 @@
     }
 
     .editButton{
+      cursor: pointer;
       margin: 1rem 0rem;
       background-color: color.$peachSecondary;
       color: color.$marronSecundary;

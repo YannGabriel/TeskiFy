@@ -21,10 +21,17 @@
   .messageContainer{
     width: 60%;
     margin-left: 2rem;
+    @media(width >= 1200px){
+      width: 30%;
+    }
   }
 
   .projectList{
     width: 90%;
     margin: auto;
+    @media(width >= 1200px){
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }

@@ -1,0 +1,22 @@
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+.companyPage{
+  min-height: 100vh;
+
+  .companyName{
+    color: color.$navyPrimary;
+    font-family: fonts.$Poppins;
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding: 3rem;
+  }
+
+  .teamMessage{
+    padding: 0rem 3rem;
+    font-family: fonts.$Roboto;
+    font-size: 1.2rem;
+    color: color.$marronSecundary;
+    font-weight: 300;
+  }
+}

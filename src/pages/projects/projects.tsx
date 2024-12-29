@@ -86,7 +86,7 @@ export const Projects = () => {
               name={project.name}
               id={project.id}
               handleRemove={removeProject} // Passando a função handleRemove de cada projeto
-              category={project.category.name}
+              category={project.category?.name}
               startDate={project.startDate}
               lastDate={project.lastDate}
               description={project.description}
