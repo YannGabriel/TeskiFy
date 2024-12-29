@@ -12,14 +12,14 @@ export const ContactCard = () =>{
   const [contacts, setContacts] = useState<Contact[]>([])
 
   useEffect(() =>{
-    fetch("http://localhost:5000/contacts", {
+    fetch("https://raw.githubusercontent.com/YannGabriel/TeskiFy/refs/heads/main/contacts.json", {
       method: "GET",
       headers:{
         "Content-Type": "application/json"
       }
     }).then((resp) => resp.json())
     .then((data) =>{
-      setContacts(data)
+      setContacts(data.contacts)
     })
   }, [])
 
