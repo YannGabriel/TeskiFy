@@ -1,0 +1,60 @@
+@use '../../sass/fonts.scss' as fonts;
+@use '../../sass/colors' as color;
+
+//Contcat Page
+.contactsPage{
+  min-height: 100vh;
+  .pageName{
+    color: color.$marronSecundary;
+    font-family: fonts.$Poppins;
+    padding: 1rem;
+  }
+.ContactContainer{
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+}
+
+
+//ContcatContainer
+.contactsContainer{
+  padding-bottom: 3rem;
+  .contactCard{
+    padding: 1rem;
+    margin: auto;
+    text-align: center;
+
+    &:not(:last-child){
+      border-bottom:  1px solid color.$marronSecundary;
+    }
+
+    .contactName{
+      color: color.$marronSecundary;
+      font-family: fonts.$Afacada;
+    }
+
+    .contactImage{
+      margin: 0.25rem 0rem;
+    }
+
+    .contactText{
+      width: 60%;
+      margin: auto;
+      padding: 0.5rem 0rem;
+      color: color.$navyPrimary;
+      font-family: fonts.$Afacada;
+    }
+
+    .contactButton{
+      background-color: color.$periwinkleSecundary;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      margin-top: 0.25rem;
+      color: color.$cloudPrimary;
+      font-family: fonts.$Poppins;
+      font-weight: 500;
+      text-decoration: none;
+    }
+  }
+}

@@ -13,10 +13,14 @@
   }
 
   .teamMessage{
+    width: 90%;
     padding: 0rem 3rem;
     font-family: fonts.$Roboto;
     font-size: 1.2rem;
     color: color.$marronSecundary;
     font-weight: 300;
+    @media(width >= 1200px){
+      width: 45%;
+    }
   }
 }
