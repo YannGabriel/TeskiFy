@@ -3,7 +3,7 @@
 
 //Contcat Page
 .contactsPage{
-  min-height: 100vh;
+  min-height: 80vh;
   .pageName{
     color: color.$marronSecundary;
     font-family: fonts.$Poppins;
@@ -20,6 +20,10 @@
 //ContcatContainer
 .contactsContainer{
   padding-bottom: 3rem;
+  @media(width >= 1200px){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .contactCard{
     padding: 1rem;
     margin: auto;
@@ -27,6 +31,10 @@
 
     &:not(:last-child){
       border-bottom:  1px solid color.$marronSecundary;
+      @media(width >= 1200px){
+        border-bottom: none;
+        border-right: 1px solid color.$marronSecundary;
+      }
     }
 
     .contactName{
