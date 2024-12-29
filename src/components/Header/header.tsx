@@ -9,7 +9,6 @@ import styles from './header.module.scss';
 
 export const Header = () => {
   const [isActive, setActive] = useState(false);
-  console.log(styles)
 
   return (
     <header className={styles.header}>

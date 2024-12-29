@@ -43,7 +43,6 @@ export const Projects = () => {
       .then((resp) => resp.json())
       .then((data) => {
         setProjects(data);
-        console.log(data);
         setRemoveLoading(true);
       })
       .catch((err) => console.log(err));

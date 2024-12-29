@@ -95,12 +95,31 @@
     }
   }
 
+.buttonsDetails{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+
   .removeProject{
+    cursor: pointer;
     display: block;
     margin-left: 1rem;
     background-color: color.$navyPrimary;
     color: color.$cloudPrimary;
     padding: 0.5rem 1.5rem;
     border-radius: 0.5rem;
+    border: none;
   }
+
+  .editProject{
+    cursor: pointer;
+    display: block;
+    margin-left: 1rem;
+    background-color: color.$periwinkleSecundary;
+    color: color.$cloudPrimary;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+}
 }

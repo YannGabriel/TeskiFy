@@ -1,4 +1,5 @@
-import { BsFillTrashFill } from "react-icons/bs";
+import { BsFillTrashFill, BsPencil } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import styles from "./cardProject.module.scss"
 
 interface Tasks {
@@ -57,9 +58,16 @@ export const ProjectCard = ({
         )}
       </div>
 
-      <button onClick={remove} className={styles.removeProject}>
-        <BsFillTrashFill />
-      </button>
+      <div className={styles.buttonsDetails}>
+        <button onClick={remove} className={styles.removeProject}>
+          <BsFillTrashFill />
+        </button>
+        <div className={styles.editProject}>
+          <Link to={`/project/${id}`}>
+          <BsPencil />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
